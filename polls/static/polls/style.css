@@ -1,0 +1,19 @@
+li a {
+    color: green;
+}
+a:visited {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: underline;
+    background-color: lightgreen;
+    padding: 14px 25px;
+    display: inline-block;
+}
+a:hover {
+    color: hotpink;
+}
+
+body {
+    background: white url("images/F1_curve.png") no-repeat;
+}
