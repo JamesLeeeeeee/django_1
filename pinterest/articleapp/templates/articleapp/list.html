@@ -21,65 +21,57 @@
     }
 </style>
 
+
     <div class="container">
-    <div class="item1">
+    {% if article_list %}
+        {% for article in article_list %}
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% include 'snippets/card.html' with article=article %}
+        </a>
+        {% endfor %}
+    {% else %}
+    <div>
+        <img src="https://picsum.photos/200/500" alt="">
+    </div>
+    <div>
         <img src="https://picsum.photos/200/300" alt="">
     </div>
     <div>
-        <img src="https://picsum.photos/200/340" alt="">
+        <img src="https://picsum.photos/200/222" alt="">
     </div>
     <div>
-        <img src="https://picsum.photos/200/260" alt="">
+        <img src="https://picsum.photos/200/115" alt="">
     </div>
     <div>
-        <img src="https://picsum.photos/200/290" alt="">
+        <img src="https://picsum.photos/200/375" alt="">
     </div>
     <div>
-        <img src="https://picsum.photos/200/440" alt="">
+        <img src="https://picsum.photos/200/437" alt="">
     </div>
     <div>
-        <img src="https://picsum.photos/200/360" alt="">
+        <img src="https://picsum.photos/200/509" alt="">
     </div>
     <div>
-        <img src="https://picsum.photos/200/150" alt="">
+        <img src="https://picsum.photos/200/449" alt="">
     </div>
     <div>
-        <img src="https://picsum.photos/200/250" alt="">
+        <img src="https://picsum.photos/200/79" alt="">
     </div>
     <div>
-        <img src="https://picsum.photos/200/137" alt="">
+        <img src="https://picsum.photos/200/489" alt="">
     </div>
-    <div>
-        <img src="https://picsum.photos/200/320" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/380" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/421" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/400" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/249" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/447" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/247" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/337" alt="">
-    </div>
-    <div>
-        <img src="https://picsum.photos/200/467" alt="">
-    </div>
-
-
   </div>
+<div style="text-align: center; align-self:flex-end;">
+    <p style="family-font:MaruBuriBold">
+        게시물을 올려보세요!
+    </p>
+    {% endif %}
+
+</div>
+
+    {% include 'snippets/pagination.html' with page_obj=page_obj %}
     <div style="text-align: center">
+
         <a href="{% url 'articleapp:create' %}" class="btn btn-outline-secondary rounded-pill col-3 mt-3 mb-3">
             create article
         </a>
