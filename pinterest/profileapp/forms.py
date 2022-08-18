@@ -1,4 +1,4 @@
-from profileapp.models import Profile
+from .models import Profile
 
 from django.forms import ModelForm
 
@@ -6,4 +6,4 @@ from django.forms import ModelForm
 class ProfileCreationForm(ModelForm):
     class Meta:
         model = Profile
-        field = ['image', 'nickname', 'message']
+        fields = ['image', 'nickname', 'message']
