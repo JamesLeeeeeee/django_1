@@ -5,9 +5,16 @@
 {% block content %}
 
 <style>
+    .container {
+        padding: 0;
+        margin: 0, auto;
+        }
+    .container a {
+        width: 45%;
+        max-width: 250px;
+        }
       .container div {
       width: 250px;
-      background-color: white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,8 +23,8 @@
 
     .container img{
     width: 100%;
-
     border-radius: 1rem;
+    object-fit: cover;
     }
 </style>
 
@@ -72,7 +79,7 @@
     {% include 'snippets/pagination.html' with page_obj=page_obj %}
     <div style="text-align: center">
 
-        <a href="{% url 'articleapp:create' %}" class="btn btn-outline-secondary rounded-pill col-3 mt-3 mb-3">
+        <a href="{% url 'articleapp:create' %}" class="btn btn-outline-secondary rounded-pill col-3 mt-3 mb-3 px-3">
             create article
         </a>
     </div>

@@ -11,7 +11,30 @@
 }
 
 .pinter_header{
-    text-align:center; margin: 2rem 0;
+    text-align:center;
+    margin: 2rem 0;
 }
 
+@media screen and (max-width:500px) {
+    html {
+        font-size:13px;
+    }
+}
 
+a {
+   color: darkgrey;
+
+}
+
+a:hover {
+    color: #343a40;
+    text-decoration: none;
+}
+
+.pinter_header_nav {
+    margin: 1rem 0.5rem;
+}
+
+.pinter_header_navbar {
+    margin: 1rem 0;
+}
