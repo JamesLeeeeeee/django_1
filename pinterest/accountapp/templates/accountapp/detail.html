@@ -49,12 +49,17 @@
                     Change Info
                 </p>
             </a>
+
             <a href="{% url 'accountapp:delete' pk=user.pk %}">
                 <p>
                     Quit
                 </p>
             </a>
             {% endif %}
+        </div>
+
+        <div>
+            {% include 'snippets/list_fragment_mypage.html' with article_list=object_list %}
         </div>
     </div>
 

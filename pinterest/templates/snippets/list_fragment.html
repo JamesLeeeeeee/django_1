@@ -1,0 +1,86 @@
+
+{% load static %}
+
+<style>
+    .container {
+        padding: 0;
+        margin: 0, auto;
+        }
+    .container a {
+        width: 45%;
+        max-width: 250px;
+        }
+      .container div {
+      width: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+    }
+
+    .container img{
+    width: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+    }
+</style>
+
+
+    <div class="container">
+    {% if article_list %}
+        {% for article in article_list %}
+        <a href="{% url 'articleapp:detail' pk=article.pk %}">
+            {% include 'snippets/card.html' with article=article %}
+        </a>
+        {% endfor %}
+    {% else %}
+    <div>
+        <img src="https://picsum.photos/200/500" alt="">
+    </div>
+    <div>
+        <img src="https://picsum.photos/200/300" alt="">
+    </div>
+    <div>
+        <img src="https://picsum.photos/200/222" alt="">
+    </div>
+    <div>
+        <img src="https://picsum.photos/200/115" alt="">
+    </div>
+    <div>
+        <img src="https://picsum.photos/200/375" alt="">
+    </div>
+    <div>
+        <img src="https://picsum.photos/200/437" alt="">
+    </div>
+    <div>
+        <img src="https://picsum.photos/200/509" alt="">
+    </div>
+    <div>
+        <img src="https://picsum.photos/200/449" alt="">
+    </div>
+    <div>
+        <img src="https://picsum.photos/200/79" alt="">
+    </div>
+    <div>
+        <img src="https://picsum.photos/200/489" alt="">
+    </div>
+  </div>
+<div style="text-align: center; align-self:flex-end;">
+    <p style="family-font:MaruBuriBold">
+        프로젝트에 게시물을 올려보세요!
+    </p>
+    {% endif %}
+
+</div>
+
+    {% include 'snippets/pagination.html' with page_obj=page_obj %}
+    <div style="text-align: center">
+
+        <a href="{% url 'articleapp:create' %}" class="btn btn-outline-secondary rounded-pill col-3 mt-3 mb-3 px-3">
+            create article
+        </a>
+    </div>
+
+<script src="{% static 'js/magicgrid.js' %}">
+
+</script>
