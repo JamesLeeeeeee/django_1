@@ -15,10 +15,10 @@
             <h2 style="font-family: 'MaruBuriBold'">
                 {{ target_user.profile.nickname }}
                     {% if target_user == user %}
-                    <a href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
-                    <p style="family-font: 'MaruBuriExtraLight'; font-size:0.8rem;margin-top:0.5rem;">
-                        Update Profile
-                    </p>
+                    <a  class="material-icons" style="box-shadow: 0 0 3px #ccc; border-radius: 10rem; padding:.4rem;" href="{% url 'profileapp:update' pk=target_user.profile.pk %}">
+
+                        edit
+
                     </a>
                     {% endif %}
                     </h2>
@@ -35,7 +35,7 @@
             </a>
             {% else %}
             <h2>
-                <a href="{% url 'accountapp:hello_world' %}">
+                <a href="{% url 'articleapp:list' %}">
                     <p>닉네임 미설정</p>
                 </a>
 
@@ -44,16 +44,16 @@
             {% endif %}
 
             {% if target_user == user %}
-            <a href="{% url 'accountapp:update' pk=user.pk %}">
-                <p>
-                    Change Info
-                </p>
+            <a  class="material-icons" style="box-shadow: 0 0 3px #ccc; border-radius: 10rem; padding:.4rem;" href="{% url 'accountapp:update' pk=user.pk %}">
+
+                    settings
+
             </a>
 
-            <a href="{% url 'accountapp:delete' pk=user.pk %}">
-                <p>
-                    Quit
-                </p>
+            <a  class="material-icons" style="box-shadow: 0 0 3px #ccc; border-radius: 10rem; padding:.4rem;" href="{% url 'accountapp:delete' pk=user.pk %}">
+
+                    cancel
+
             </a>
             {% endif %}
         </div>

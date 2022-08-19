@@ -17,7 +17,7 @@
                     src="{{ target_article.image.url }}" alt="">
 
             <p>
-                {{ target_article.content }}
+                {{ target_article.content | safe }}
             </p>
             {% if target_article.writer == user %}
             <a href="{% url 'articleapp:update' pk=target_article.pk %}"
