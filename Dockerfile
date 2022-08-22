@@ -4,7 +4,7 @@ WORKDIR /home/
 
 RUN git clone https://github.com/JamesLeeeeeee/django_1.git
 
-WORKDIR /home/django_1
+WORKDIR /home/django_1/
 
 RUN pip install -r requirements.txt
 
