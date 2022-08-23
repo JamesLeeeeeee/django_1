@@ -27,7 +27,7 @@ DATABASES = {
         'NAME': 'django',
         'USER': 'django',
         'PASSWORD': 'awasoft12',
-        'HOST': 'mariadbb',
+        'HOST': 'mariadb',
         'PORT': '3306',
     }
 }
