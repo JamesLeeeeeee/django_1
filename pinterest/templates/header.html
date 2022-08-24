@@ -14,9 +14,9 @@
         <span>Subscription</span>
         </a>
         {% if not user.is_authenticated %}
-        <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="pinter_header_nav">
+        <a href="{% url 'accountapp:login' %}?next={% url  'articleapp:list' %}" class="pinter_header_nav">
             <span>login</span>
-        </a>
+
         <a href="{% url 'accountapp:create' %}" class="pinter_header_nav">
             <span>SignUp</span>
         </a>
