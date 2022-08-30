@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os, environ
+
+from django.contrib import messages
 from django.core.exceptions import ImproperlyConfigured
 from django.urls import reverse_lazy
 
@@ -35,6 +37,7 @@ INSTALLED_APPS = [
     'commentapp',
     'projectapp',
     'subscribeapp',
+    'likeapp',
 
 ]
 
@@ -49,6 +52,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'pinterest.urls'
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'outline-danger',
+    messages.SUCCESS: 'outline-success',
+}
 
 TEMPLATES = [
     {

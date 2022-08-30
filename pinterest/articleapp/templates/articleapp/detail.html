@@ -2,11 +2,46 @@
 
 {% block content %}
 
+
     <div>
         <div style="text-align:center; max-width:700px; margin:4rem auto;">
             <h1>
                 {{ target_article.title }}
+                {{ like_user }}
+
             </h1>
+            <div style="height: 2rem;">
+                {% if messages %}
+                {% for message in messages %}
+                {% if message.tags == 'outline-danger' %}
+                <a href="{% url 'likeapp:article_like' pk=target_article.pk %}">
+                    <i class="material-icons"; style="color:#f77;vertical-align:middle;font-size:1.2rem">
+                    favorite
+                </i>
+                </a>
+                {% else %}
+                <a href="{% url 'likeapp:article_like' pk=target_article.pk %}">
+                    <i class="material-icons"; style="color:red;vertical-align:middle;font-size:1.2rem">
+                    favorite
+                </i>
+                </a>
+
+                {% endif %}
+                {% endfor %}
+
+                {% else %}
+                <a href="{% url 'likeapp:article_like' pk=target_article.pk %}">
+                    <i class="material-icons"; style="color:#f77;vertical-align:middle;font-size:1.2rem">
+                    favorite
+                </i>
+                </a>
+                {% endif %}
+
+
+                <span style="vertical-align:middle;">
+                    {{ target_article.like }}
+                </span>
+            </div>
 
             <h6>
                 {{ target_article.writer.profile.nickname }}
